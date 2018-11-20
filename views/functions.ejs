@@ -1,0 +1,19 @@
+<% 
+checkSession = function(req, res) {
+	if (req.session.user_id) {
+	    db.collection('users', function (err, collection) {
+	        collection.findOne({
+	            _id: new ObjectID(req.session.user_id)
+	        }, function (err, user) {
+	            if (user) {
+	                return true;
+	            } else {
+	                return false;
+	            }
+	        });
+	    });
+	} else {
+	    return false;
+	}
+}
+%>

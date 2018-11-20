@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The GDMC Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The website for GDMC">
+    <meta name="author" content="Michael C. Green">
+    <link rel="icon" href="images/Icon.png">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'> -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+
+        background: url('images/Screenshot1-1.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+
+        background-attachment: fixed;
+        font-family: 'Londrina Solid';font-size: 22px;
+        font-weight: 100;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+	
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0 10px;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {	
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+	   .jumbotron h4 {
+	  	padding: -10px;
+	   }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      .main_title {
+        padding-top: 100px;
+
+      }
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .carousel {
+      	padding-bottom: 20px;
+        width:120%;
+        background-position: center /* or whatever position you wanted */
+        background-size: cover;
+        margin :auto;
+      }
+      #carouselExampleIndicators {
+        margin:auto;
+      }
+      .carousel-item {        
+        width:120%;
+        background-repeat: no-repeat;
+        background-position: center /* or whatever position you wanted */
+        background-size: cover;
+      }
+
+      .carousel-inner > .item > img, 
+      .carousel-inner > .item > a > img{
+      width: 100%; /* use this, or not */
+      margin: auto;
+      }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/"><h3>The GDMC Competition</h3></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <ul class = "navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a><span class="sr-only">(current)</span></li>
+                <li class="nav-item"><a class="nav-link" href="/rules">Rules</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item nav-link" href="/">Research</li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Rankings</a>
+                  <div class="dropdown-menu" areia-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Settlement Generation Rankings</a>
+                  </div>
+                </li>
+              </ul>          
+            </div>
+            <hr>
+            <div class="navbar-nav">
+              <% if(!isAuthed) { %>
+                <a class="nav-item nav-link" href="/signup">Sign up</a>
+                <a class="nav-item nav-link" href="/login">Log in</a>
+              <% } else { %>
+                <a class="nav-item nav-link" href="/profile">Hello, <%= user.firstName %></a>
+                <a class="nav-item nav-link" href="/submit">Submit</a>
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+            <% } %>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+      <div class="container-fluid" style="padding-top:100px">
+        <h1 class="alert alert-minecraft-stonebrick" style="text-align: center">Generative Design in Minecraft</h1>  
+      </div>
+    <div class="container-fliud">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+            <div class="alert alert-minecraft-grass" align="center">
+              <a style="text-decoration: underline; color:gold">**Useful Links**</a>
+             <br><a class="alert-minecraft-white" target="_blank" href="https://github.com/mcgreentn/GDMC">Get the Code</a>
+             <br><a class="alert-minecraft-white" target="_blank" href="https://github.com/mcgreentn/GDMC/wiki">Wiki Page</a>
+             <br><a class="alert-minecraft-white" href="/rules">Competition Rules</a>
+            </div>
+            <div class="alert alert-minecraft-grass" align="center">
+             <a class="alert-minecraft-gold" style="text-decoration: underline; color: gold;">**Important Dates**</a>
+             <br><a class="alert-minecraft-white">June 30th: Submission Deadline</a>
+             <br><a class="alert-minecraft-white">July: Evaluation of Submissions</a>
+             <br><a class="alert-minecraft-white">August 7-10: FDG</a>
+            </div>            
+        </div> 
+        <div class="col-md-6 mb-3">
+          <div class="alert alert-minecraft-darkoak">
+            <!-- <h2 align="center" class="alert-minecraft-gold" style="text-decoration: underline;">What Is This?</h2> -->
+            <a align="center">Welcome to the Generative Design in Minecraft Competition (GDMC) website. We are currently running our first challenge, the settlement generation competition.</a><br><br>
+
+            <a>Do you like Minecraft and procedural content generation? Did you look at the villages in Minecraft and thought, I could write a better algorithm to produce settlements? Now is your chance to prove it.</a><br><br>
+
+            <a>The Settlement Generation Challenge is about writing an algorithm that can create a settlement for a given, unknown Minecraft map. <a href="/rules" style="color:gold; text-decoration: underline;">The challenge</a> is to produce an algorithm that is adaptive towards the provided map, creates a settlement that satisfies a range of  functional requirement - but also looks good and evokes an interesting narrative. The goal is to basically produce an algorithm that can rival the state of the art of what humans can produce.</a><br><br>
+
+            <a>If you are interested in participating, you can find a framework and example agents on our <a href="https://github.com/mcgreentn/GDMC" target="_blank" style="color:gold; text-decoration: underline;">GitHub page</a>. Visit the <a href="https://github.com/mcgreentn/GDMC/wiki" target="_blank" style="color:gold; text-decoration: underline;">wiki page</a> for help and documentation. You can also find the <a href="/rules" style="color:gold; text-decoration: underline;">rules and detailed judging criteria</a> on this page. The basic idea is that all submitted algorithms will be run on three, previously unseen, maps, and the results will then be evaluated by our <a style="color:gold; text-decoration: underline;" href="/about">advisory board</a>.</a><br><br>
+
+            <a>The submission deadline is the 30th of June, and results will be announce at the Foundations of Digital Games conference (FDG 2018) in August - and online. Submissions will open soon.</a><br><br>
+
+            <a>Also, follow us on <a href="https://twitter.com/GenDesignMC" style="color:gold; text-decoration: underline;">Twitter (@GenDesignMC)</a> for updates and announcements.</a>
+             
+          </div>          
+        </div>     
+        <div class="col-md-3 mb-3">
+          <div class="alert alert-minecraft-grass" align="center"><a style="text-decoration: underline; color:gold;">**Contact Us**</a>
+            <br>
+            <a>
+              <a href="https://twitter.com/GenDesignMC" target="_blank" style="color:white">@GenDesignMC</a>
+              <br>GenDesignMC@gmail
+            </a>
+          </div>
+        </div>      
+      </div>
+    </div>
+<!--         <div class="row">
+          <div class="col-md-12 mb-3">
+            <div class="alert alert-info" align="center">We are still making changes to our website! Check back soon for more information about the competition.
+            </div>
+	         </div>
+        </div> -->
+      <!-- </div> /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+  </body>
+</html>

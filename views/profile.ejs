@@ -1,0 +1,266 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head runat="server">  
+<meta charset="utf-8">
+    <title>The GDMC Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The website for GDMC">
+    <meta name="author" content="Michael C. Green">
+    <link rel="icon" href="images/Icon.png">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'> -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+    
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+        font-family: 'Londrina Solid';font-size: 22px;        
+        
+      }
+      main {
+        padding-top:70px;
+      }
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+    
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0 10px;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {    
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      .jumbotron h4 {
+        padding: -10px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .carousel {
+        padding-bottom: 20px;
+      }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+</head>  
+<body>  
+  <% include header.ejs %>
+
+      <div class="containter">
+            <h2><%= user.firstName %> - Profile</h2>
+            <br>
+
+            <!-- show any messages that come back -->
+            <%
+            console.log("message legnth: " + message.length);
+            %>
+            <% if (message.length > 0) { %>
+              <div class="alert alert-info"><%= message %></div>
+            <% } %>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Edit Information</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <br>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <div class="alert alert-success" align="center">Welcome to your profile. From here you can modify your information, submit a competitor, or update one you already submitted!</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label>Email:</label>
+                    <a><%= user.email %></a>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Name:</label>
+                    <a><%= user.firstName + " " + user.lastName %></a>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Join Date:</label>
+                    <a><%= user.join_date %></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label>Location:</label>
+                    <a id="country"></a>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label>Affiliation:</label>
+                    <a><%= user.affiliation %></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <a class="btn btn-outline-primary btn-lg" href="/submit">Submit Competitor!</a>
+                  </div>
+                </div>
+                <br>
+                <ul class="nav nav-tabs" id="submissionsTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="settlementGen-tab" data-toggle="tab" href="#settmentGen" role="tab" aria-controls="settmentGen" aria-selected="true">Settlement Generator</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="settlementGen" role="tabpanel" aria-labelledby="settlementGen-tab">
+                    <br>
+                      <% if(user.submissions.s_2018.settlement_generator_submitted) { %>
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>Generator Name:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">
+                            <a><%= user.submissions.s_2018.settlement_generator_name %></a>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>About:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">  
+                            <a><%= user.submissions.s_2018.settlement_generator_about %></a>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>Submitted Date:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">  
+                            <a><%= user.submissions.s_2018.settlement_generator_submit_time %></a>
+                          </div>
+                        </div>                        
+                        
+                      <%} %>
+                  </div>
+                </div>                
+                <br>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <div class="alert alert-info" align="center">Coming soon, the results of your submission will be displayed here!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <br>
+                <form class="form" action="/save-profile" method="post">
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="emailField">Email:</label>
+                      <input type="text" id="emailField" name="email" class="form-control" value=<%= user.email %> readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName">First Name:</label>
+                      <input type="text" id="firstName" name="firstName" class="form-control" value=<%= user.firstName %> >
+                    </div>
+                  </div>                
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label class="mr-sm-2" for="countryField">Country:</label>
+                      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="countryField" name = "country">
+                        <option id="selectedCountry" selected></option><option value="1">Afghanistan</option><option value="2">Aland Islands</option><option value="3">Albania</option><option value="4">Algeria</option><option value="5">American Samoa</option><option value="6">Andorra</option><option value="7">Angola</option><option value="8">Anguilla</option><option value="9">Antarctica</option><option value="10">Antigua and Barbuda</option><option value="11">Argentina</option><option value="12">Armenia</option><option value="13">Aruba</option><option value="14">Australia</option><option value="15">Austria</option><option value="16">Azerbaijan</option><option value="17">Bahamas</option><option value="18">Bahrain</option><option value="19">Bangladesh</option><option value="20">Barbados</option><option value="21">Belarus</option><option value="22">Belgium</option><option value="23">Belize</option><option value="24">Benin</option><option value="25">Bermuda</option><option value="26">Bhutan</option><option value="27">Bolivia</option><option value="28">Bosnia and Herzegovina</option><option value="29">Botswana</option><option value="30">Bouvet Island</option><option value="31">Brazil</option><option value="32">British Indian Ocean Territory</option><option value="33">Brunei Darussalam</option><option value="34">Bulgaria</option><option value="35">Burkina Faso</option><option value="36">Burundi</option><option value="37">Cambodia</option><option value="38">Cameroon</option><option value="39">Canada</option><option value="40">Cape Verde</option><option value="41">Cayman Islands</option><option value="42">Central African Republic</option><option value="43">Chad</option><option value="44">Chile</option><option value="45">China</option><option value="46">Christmas Island</option><option value="47">Cocos (Keeling) Islands</option><option value="48">Colombia</option><option value="49">Comoros</option><option value="50">Congo</option><option value="51">Congo, The Democratic Republic of the</option><option value="52">Cook Islands</option><option value="53">Costa Rica</option><option value="54">C?te D'Ivoire</option><option value="55">Croatia</option><option value="56">Cuba</option><option value="57">Cyprus</option><option value="58">Czech Republic</option><option value="59">Denmark</option><option value="60">Djibouti</option><option value="61">Dominica</option><option value="62">Dominican Republic</option><option value="63">Ecuador</option><option value="64">Egypt</option><option value="65">El Salvador</option><option value="66">Equatorial Guinea</option><option value="67">Eritrea</option><option value="68">Estonia</option><option value="69">Ethiopia</option><option value="70">Falkland Islands (Malvinas)</option><option value="71">Faroe Islands</option><option value="72">Fiji</option><option value="73">Finland</option><option value="74">France</option><option value="75">French Guiana</option><option value="76">French Polynesia</option><option value="77">French Southern Territories</option><option value="78">Gabon</option><option value="79">Gambia</option><option value="80">Georgia</option><option value="81">Germany</option><option value="82">Ghana</option><option value="83">Gibraltar</option><option value="84">Greece</option><option value="85">Greenland</option><option value="86">Grenada</option><option value="87">Guadeloupe</option><option value="88">Guam</option><option value="89">Guatemala</option><option value="90">Guernsey</option><option value="91">Guinea</option><option value="92">Guinea-Bissau</option><option value="93">Guyana</option><option value="94">Haiti</option><option value="95">Heard Island and McDonald Islands</option><option value="96">Holy See (Vatican City State)</option><option value="97">Honduras</option><option value="98">Hong Kong</option><option value="99">Hungary</option><option value="100">Iceland</option><option value="101">India</option><option value="102">Indonesia</option><option value="103">Iran, Islamic Republic of</option><option value="104">Iraq</option><option value="105">Ireland</option><option value="106">Isle of Man</option><option value="107">Israel</option><option value="108">Italy</option><option value="109">Jamaica</option><option value="110">Japan</option><option value="111">Jersey</option><option value="112">Jordan</option><option value="113">Kazakhstan</option><option value="114">Kenya</option><option value="115">Kiribati</option><option value="116">Korea, Democratic People's Republic of</option><option value="117">Korea, Republic of</option><option value="118">Kuwait</option><option value="119">Kyrgyzstan</option><option value="120">Lao People's Democratic Republic</option><option value="121">Latvia</option><option value="122">Lebanon</option><option value="123">Lesotho</option><option value="124">Liberia</option><option value="125">Libyan Arab Jamahiriya</option><option value="126">Liechtenstein</option><option value="127">Lithuania</option><option value="128">Luxembourg</option><option value="129">Macao</option><option value="130">Macedonia, The Former Yugoslav Republic of</option><option value="131">Madagascar</option><option value="132">Malawi</option><option value="133">Malaysia</option><option value="134">Maldives</option><option value="135">Mali</option><option value="136">Malta</option><option value="137">Marshall Islands</option><option value="138">Martinique</option><option value="139">Mauritania</option><option value="140">Mauritius</option><option value="141">Mayotte</option><option value="142">Mexico</option><option value="143">Micronesia, Federated States of</option><option value="144">Moldova, Republic of</option><option value="145">Monaco</option><option value="146">Mongolia</option><option value="147">Montenegro</option><option value="148">Montserrat</option><option value="149">Morocco</option><option value="150">Mozambique</option><option value="151">Myanmar</option><option value="152">Namibia</option><option value="153">Nauru</option><option value="154">Nepal</option><option value="155">Netherlands</option><option value="156">Netherlands Antilles</option><option value="157">New Caledonia</option><option value="158">New Zealand</option><option value="159">Nicaragua</option><option value="160">Niger</option><option value="161">Nigeria</option><option value="162">Niue</option><option value="163">Norfolk Island</option><option value="164">Northern Mariana Islands</option><option value="165">Norway</option><option value="166">Oman</option><option value="167">Pakistan</option><option value="168">Palau</option><option value="169">Palestinian Territory, Occupied</option><option value="170">Panama</option><option value="171">Papua New Guinea</option><option value="172">Paraguay</option><option value="173">Peru</option><option value="174">Philippines</option><option value="175">Pitcairn</option><option value="176">Poland</option><option value="177">Portugal</option><option value="178">Puerto Rico</option><option value="179">Qatar</option><option value="180">Reunion</option><option value="181">Romania</option><option value="182">Russian Federation</option><option value="183">Rwanda</option><option value="184">Saint Barth?lemy</option><option value="185">Saint Helena</option><option value="186">Saint Kitts and Nevis</option><option value="187">Saint Lucia</option><option value="188">Saint Martin</option><option value="189">Saint Pierre and Miquelon</option><option value="190">Saint Vincent and the Grenadines</option><option value="191">Samoa</option><option value="192">San Marino</option><option value="193">Sao Tome and Principe</option><option value="194">Saudi Arabia</option><option value="195">Senegal</option><option value="196">Serbia</option><option value="197">Seychelles</option><option value="198">Sierra Leone</option><option value="199">Singapore</option><option value="200">Slovakia</option><option value="201">Slovenia</option><option value="202">Solomon Islands</option><option value="203">Somalia</option><option value="204">South Africa</option><option value="205">South Georgia and the South Sandwich Islands</option><option value="206">Spain</option><option value="207">Sri Lanka</option><option value="208">Sudan</option><option value="209">Suriname</option><option value="210">Svalbard and Jan Mayen</option><option value="211">Swaziland</option><option value="212">Sweden</option><option value="213">Switzerland</option><option value="214">Syrian Arab Republic</option><option value="215">Taiwan, ROC</option><option value="216">Tajikistan</option><option value="217">Tanzania, United Republic of</option><option value="218">Thailand</option><option value="219">Timor-Leste</option><option value="220">Togo</option><option value="221">Tokelau</option><option value="222">Tonga</option><option value="223">Trinidad and Tobago</option><option value="224">Tunisia</option><option value="225">Turkey</option><option value="226">Turkmenistan</option><option value="227">Turks and Caicos Islands</option><option value="228">Tuvalu</option><option value="229">Uganda</option><option value="230">Ukraine</option><option value="231">United Arab Emirates</option><option value="232">United Kingdom</option><option value="233">United States</option><option value="234">United States Minor Outlying Islands</option><option value="235">Uruguay</option><option value="236">Uzbekistan</option><option value="237">Vanuatu</option><option value="238">Venezuela</option><option value="239">Viet Nam</option><option value="240">Virgin Islands, British</option><option value="241">Virgin Islands, U.S.</option><option value="242">Wallis And Futuna</option><option value="243">Western Sahara</option><option value="244">Yemen</option><option value="245">Zambia</option><option value="246">Zimbabwe</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName">Last Name:</label>
+                      <input type="text" id="lastName" class="form-control" name="lastName" value=<%= user.lastName %> >
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="affiliationField">Affiliation:</label>
+                      <input type="text" id="affiliationField" class="form-control" name="affiliation" value=<%= user.affiliation %> >
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="websiteField">Website:</label>
+                      <input type="text" id="websiteField" class="form-control" name="website" value=<%= user.website %> >
+                    </div>
+                  </div>  
+                  <div class="form-row">
+                    <button type="submit" class="btn btn-primary mb-2">Save Changes</button>
+                  </div>              
+                </form>
+              </div>
+            </div>                        
+      </div>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+
+      var countryList = ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, The Democratic Republic of the", "Cook Islands", "Costa Rica", "C?te D'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthlemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, ROC", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis And Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
+        document.getElementById("country").innerHTML = countryList[<%= user.country %> - 1];
+        document.getElementById("selectedCountry").innerHTML = countryList[<%= user.country %> - 1];
+        document.getElementById("selectedCountry").value = <%= user.country %>;
+    </script>
+</body>
+</html>  

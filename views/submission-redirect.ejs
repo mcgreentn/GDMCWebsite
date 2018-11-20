@@ -1,0 +1,139 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head runat="server">  
+<meta charset="utf-8">
+    <title>The GDMC Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The website for GDMC">
+    <meta name="author" content="Michael C. Green">
+    <link rel="icon" href="images/Icon.png">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+      main {
+        padding-top:70px;
+      }
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+    
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0 10px;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {    
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      .jumbotron h4 {
+        padding: -10px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .carousel {
+        padding-bottom: 20px;
+      }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+</head>  
+<body>  
+    <div class="container">
+      <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><h3>The GDMC Competition</h3></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <ul class = "navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a><span class="sr-only">(current)</span></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://arxiv.org/abs/1803.09853" target="_blank">Research</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Rankings</a>
+                  <div class="dropdown-menu" areia-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Settlement Generation Rankings</a>
+                  </div>
+                </li>
+              </ul>          
+            </div>
+            <hr>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="http://localhost:8000/submit.html">Submit</a>
+              <!-- <a class="nav-item nav-link" href="#">Sign up</a>
+              <a class="nav-item nav-link" href="#">Log in</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="containter">
+        <main role="main" class="container">
+            <div class="alert alert-success" align="center"><b>Success!</b> Your submission has been filed away in our secret underground lab!</div>
+            <div class="alert alert-warning" align="center">While you wait for results, <b>explore</b> the rest of the website, <b>check out</b> the codebase, and <b>be on the lookout</b> for email updates from us!</div>
+        </main>
+      </div>
+    </div>
+</body>
+</html>  

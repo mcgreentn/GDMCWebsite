@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The GDMC Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The website for GDMC">
+    <meta name="author" content="Michael C. Green">
+    <link rel="icon" href="images/Icon.png">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'> -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+
+        background: url('images/background.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+
+        background-attachment: fixed;
+        font-family: 'Londrina Solid';font-size: 22px;
+        font-weight: 100;
+      }
+      a {
+        color:white;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+	
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0 10px;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {	
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+	   .jumbotron h4 {
+	  	padding: -10px;
+	   }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      .main_title {
+        padding-top: 100px;
+
+      }
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .carousel {
+      	padding-bottom: 20px;
+        width:120%;
+        background-position: center /* or whatever position you wanted */
+        background-size: cover;
+        margin :auto;
+      }
+      #carouselExampleIndicators {
+        margin:auto;
+      }
+      .carousel-item {        
+        width:120%;
+        background-repeat: no-repeat;
+        background-position: center /* or whatever position you wanted */
+        background-size: cover;
+      }
+
+      .carousel-inner > .item > img, 
+      .carousel-inner > .item > a > img{
+      width: 100%; /* use this, or not */
+      margin: auto;
+      }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+  <% include header.ejs %>
+
+    <div class="container" style="padding-top: 100px">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <h1 class="alert alert-minecraft-stonebrick" style="text-align: center">Competition Rules</h1>  
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <nav class="alert-minecraft-dirt">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Settlement Generation</a>
+            <!--         <a class="nav-item nav-link disabled" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Coming Soon</a>
+            <a class="nav-item nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Coming Soon</a> -->
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="alert alert-minecraft-stonebrick">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-summary-tab" data-toggle="tab" href="#nav-summary" role="tab" aria-controls="nav-summary" aria-selected="true">Summary</a>
+                  <a class="nav-item nav-link" id="nav-evaluation-tab" data-toggle="tab" href="#nav-evaluation" role="tab" aria-controls="nav-evaluation" aria-selected="false">Evaluation</a>              
+                  <a class="nav-item nav-link" id="nav-submission-tab" data-toggle="tab" href="#nav-submission" role="tab" aria-controls="nav-submission" aria-selected="false">Submission</a>
+                  <a class="nav-item nav-link" id="nav-challenges-tab" data-toggle="tab" href="#nav-challenges" role="tab" aria-controls="nav-challenges" aria-selected="false">Challenges</a>
+                  <a class="nav-item nav-link" id="nav-examples-tab" data-toggle="tab" href="#nav-examples" role="tab" aria-controls="nav-examples" aria-selected="false">Examples</a>
+                  <a class="nav-item nav-link" id="nav-faq-tab" data-toggle="tab" href="#nav-faq" role="tab" aria-controls="nav-faq" aria-selected="false">FAQ</a>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-summary" role="tabpanel" aria-labelledby="nav-summary-tab">
+                  <a>The goal for the GDMC Settlement Generation Competition is to produce an Artificial Intelligence program (AI) that can produce a functional, aesthetic and believable Settlement adapted to a given Minecraft map. To participate, you have to write a program that can build a settlement for an unknown Minecraft map. After you submit your algorithm, we will run it on 3 previously unseen maps, and a panel of human judges will then evaluate the resulting settlement, based on a set of criteria focusses on Adaptation to the Environment and Terrain, Functionality from an Embodied Perspective, Narrative Integration and Visual Aesthetics.</a>
+                  <br><br>
+                  <a>You can read more about the motivation and scientific background of this competition</a> 
+                  <a href="https://arxiv.org/abs/1803.09853" style="color:gold">here.</a><br>
+                  <br>
+    			        <h3>Rules:</h3>
+                  <a>Team submissions are allowed.
+                  <br>One submission per person / team only.
+                  <br>Submission deadline is the 28th of February, 2019.
+                  <br>For compatibility reasons, we will work with Minecraft Version 1.12.
+                  <br><br>
+                  Winners will be announced during the Foundations of Digital Games Conference in August 2018. At the same time we will also publish the detailed evaluation results online for each algorithm. Once the results have been announced we will also publish the competition maps, the settlements generated by the algorithms, and the participants description of their algorithm. We also encourage participants to publish their code, but this will not be mandatory. If participants agree to share their code, we will make it available on our website with an appropriate open source license. If they decline, we will not publish the code. In either case, the organizers will not take ownership of the code.</a>      
+                </div>  
+                <div class="tab-pane fade" id="nav-evaluation" role="tabpanel" aria-labelledby="nav-evaluation-tab">
+                  <a>The submitted algorithms will be judged based on a set of 3, different, unknown maps. Example training maps will be provided. The competition maps will not be publicly available until after the competition. Every submitted algorithm will be run on the same 3 unknown maps, and the resulting maps with settlements will be anonymized and given to the judges. The judges will also be able to see the 3 maps in their natural state, before the algorithm was applied.
+                  <br><br>
+                  The algorithms should not run substantially longer than 10 minutes on a regular PC for a 256 by 256 map, and not exceed 2 Gbit of RAM. Algorithms will be disqualified if they run considerably longer than 10 minutes on a single map. The competition maps will be around 256 by 256 in size, but the exact size of the competition maps will vary. The algorithm will be given the exact dimensions of the map when it is run and should be able to adapt to slightly bigger or smaller maps. For example, a competition map might be 200 by 300 in size. 
+                  <br><br>
+                  The competition is judged by a set of human judges who are either member of the advisory board of delegates selected by them. If a member of the advisory board or the organization team ends up submitting an algorithm themselves, they will be excluded from the evaluation process for that year, i.e. they will not be allowed to nominate judges or judge themselves.
+                  <br><br>
+                  The plan is to have all judges evaluate all algorithms and average their scores. If this is not possible, due to high number of submissions, there might be several evaluation rounds, where earlier rounds are used to reduce the number of submissions by evaluating a lower number of maps with only a subsection of the judges.
+                  <br><br>
+                  The judges will then evaluate all 3 maps for a given algorithm by spawning at the central point (for the x and z coordinate) of the map. While the judges are in creative mode, they are encouraged to walk through the settlement from a survival perspective. They are given a set of evaluation criteria (see Evaluation Criteria) and are asked to assign points based on the performance of the algorithm across all maps. The sum of the points is the score of the algorithm. The algorithm with the highest score wins.</a>
+                  <br><br>
+                  <h3>Evaluation Criteria:</h3>
+                  <a>We defined a set of evaluation criteria based on what we believe the challenges in moving towards more human-like settlement generation are. So, when evaluation the generated settlements judges are asked to score each generator in four categories: Adaptability, Functionality, Narrative and Aesthetics. Each category is worth 10 points, and the following questions are provided to the judges to guide their evaluation. These questions are illustrative of the category, but not exhaustive. They should provide judges with an idea of what this category is about, but do not imply that they cover the complete scope the category. To gain a better understanding of the different categories we suggest you look at the Challenges section of this website or to have a look at</a> <a href="https://arxiv.org/abs/1803.09853" style="color:gold">our competition paper.</a>
+                  <br><br>
+                  <h4>Bonus Challenge (Chronicle Challenge)</h4>
+                  <a>For the 2nd integration we are introducing a bonus challenge, the chronicle challenge. This is an option extra challenge, that will be evaluated separately from the regular competition. If you want to participate, indicate so when you submit. 
+                  <br>For the chronicle challenge you have to produce a written book, in Minecraft and place it inside the settlement you generated – ideally in a place where it is easily found. The book should contain the chronicle of the settlement (in English) and should contain a narrative on how this particular settlement came about. The entries will be evaluated based on how well the given chronicle fits the generated settlement and on overall quality.</a>
+                  <br><br>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-Adaptability-tab" data-toggle="tab" href="#nav-Adaptability" role="tab" aria-controls="nav-Adaptability" aria-selected="true">Adaptability</a>
+                      <a class="nav-item nav-link" id="nav-Functionality-tab" data-toggle="tab" href="#nav-Functionality" role="tab" aria-controls="nav-Functionality" aria-selected="false">Functionality</a>
+                      <a class="nav-item nav-link" id="nav-Narrative-tab" data-toggle="tab" href="#nav-Narrative" role="tab" aria-controls="nav-Narrative" aria-selected="false">Narrative</a>
+                      <a class="nav-item nav-link" id="nav-Aesthetics-tab" data-toggle="tab" href="#nav-Aesthetics" role="tab" aria-controls="nav-Aesthetics" aria-selected="false">Aesthetics</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-Adaptability" role="tabpanel" aria-labelledby="nav-Adaptability-tab">
+                      <br>
+                      <a>- Do the structures in the settlement adapt to the terrain?</a><br>
+                      <a>- Do the structure in the environment reflect the environment, i.e. usage of available material, adaptation to the biome?</a><br>
+                      <a>- Does the settlement take advantage of terrain features or compensate for problems with the terrain?</a><br>
+                      <a>- Are the settlements different in reaction to the different initial maps?</a><br>
+                      <a>- Are there any other ways in how the settlement adapt to the given maps?</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Functionality" role="tabpanel" aria-labelledby="nav-Functionality-tab">
+                      <br>
+                      <a>- Does the settlement provide protection from danger?</a><br>
+                      <a>- Does it keep mobs from spawning?</a><br>
+                      <a>- Does it keep mobs out?</a><br>
+                      <a>- Protection from other environmental dangers?</a><br>
+                      <a>- Is the settlement accessible to a player avatar in survival mode?</a><br>
+                      <a>- Can you walk to everywhere?</a><br>
+                      <a>- Does the settlement provide faster modes of transport?</a><br>
+                      <a>- How easy is it to find your way around?</a><br>
+                      <a>- Does the settlement provide the player with additional affordances?</a><br>
+                      <a>- Does the settlement makes ressources easy to obtain?</a><br>
+                      <a>- Is there an easy way to get food?</a><br>
+                      <a>- Does the settlement provide functionality to the villagers?</a><br>
+                      <a>- Does the settlement reflect the embodiment of the player avatar?</a><br>
+                      <a>- Is it appropriately scaled?</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Narrative" role="tabpanel" aria-labelledby="nav-Narrative-tab">
+                      <br>
+                      <a>- Is the settlement evoking an interesting story?</a><br>
+                      <a>- After looking at the settlement, could you give a short description of what this settlement is about that sets it apart from other settlements?</a><br>
+                      <a>- Is it clear what the function of the settlement is?</a><br>
+                      <a>- Does this function make sense in regards to the terrain and environment it is in? I.e. is the logging camp in a forest, the harbour town at the sea?</a><br>
+                      <a>- Is the functionality of the settlement supporting this narrative function? I.e. does the fortified frontier settlement have functioning walls, is the farming village equipped with functioning fields?</a><br>
+                      <a>- Does the final settlement give any indication of how the settlement developed?</a><br>
+                      <a>- Is is possible to look at the settlement and imagine in what order things where build, or what stages the development of the settlement took?</a><br>
+                      <a>- Is there an indication of the history of the settlement evident in the structure?</a><br>
+                      <a>- Are the any convincing and consistent allusion to human cultures or specific points in history that the settlement is modelled after?</a><br>
+                      <a>- Does the settlement have a culture - either fictional or historical, that is evident from the settlement?</a><br>
+                      <a>- Do you know things about this culture just by looking at the settlement?</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-Aesthetics" role="tabpanel" aria-labelledby="nav-Aesthetics-tab">
+                      <br>
+                      <a>- Does the settlement look good?</a><br>
+                      <a>- Is there a consistent look to the settlement? Does it appear that all structures belong to the same settlement?</a><br>
+                      <a>- Is there an appropriate level of variation in the existing structures?</a><br>
+                      <a>- Are there any jarring features that make the settlement look unbelievable?</a><br>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-submission" role="tabpanel" aria-labelledby="nav-submission-tab">
+                  <a>Once the submission website open, you can submit your competition entry via this website. The submission should consist of:
+                  <br>
+                  a) A zip file containing your algorithm
+                  <br>
+                  b) A two page (~800 words) write-up outlining the function of your algorithm, detailing what techniques where used in the algorithm and what the strength and unique features of the algorithm are.</a> 
+                   <br><br>
+                  <a>We offer two different options for the submission of the algorithm. You can either submit an algorithm based on our provided framework, or you can provide us with a standalone executable that edits the map directly. For both cases, we encourage you to submit functional prototypes of your solutions early, so we can test them and verify that they run on our evaluation machines.</a>
+                  <br><br>
+                  <a>For compatibility reasons, we will work with Minecraft Version 1.12.</a>
+                  <br><br>
+                  <h3>Option A:</h3>
+                  <a>You submit a ZIP file, which contains a python filter file, complete with a filter "perform function", and optionally, any other required files necessary for your code (data files, etc). This will be unzipped into the filters folder and run from within MCEdit. The perform function should contain the code that builds the settlement for the map and within the coordinates specified as parameters in the perform function. The coordinates give the corner of a bounding box, the settlement should be built within that bounding box. 
+                  <br><br>
+                  This option is based on the framework we provide in <a href="https://github.com/mcgreentn/GDMC" style="color:gold">the repo</a>, where you do not have to deal with loading or storing the map. We suggest you test your code within a virtual environment with a standard Anaconda installation, plus the following optional libraries:
+                  <br>
+                  • Any library contained in the default Anaconda installation
+                  <br>
+                  • PyTorch
+                  <br>
+                  • Keras
+                  <br>
+                  • PyTorch
+                  <br>
+                  • PyOpenGL
+                  <br>
+                  • Numpy
+                  <br>
+                  • Scipy
+                  <br>
+                  • If you would like to use any other libraries, please notify us as soon as possible so we can decide whether to support it, in which case it will be added to the list.</a>
+                  <br><br>
+                  <h3>Option B:</h3>
+                  <a>For option B we will ask you to submit a mod compatible with the latest Forge framework, that we can then load in Minecraft. We are still testing a framework on this but will soon provide you with an example implementation. But if you have experience with making Minecraft mods, you can just implement a mod that has the detailed interface.
+                  For this option you will submit a functioning Forge mod, that implements that following function.
+                  <br>It provides an additional command for the Minecraft in game console, called “\BuildSettlement x1, y1, z1, x2, y2, z2”, where x1, y1, z1, x2, y2, z2, are six integers, which together define the bounding box of the generated village. You can assume x1 < x2, y1 < y2 and z1 < z2. When your mod is loaded in Minecraft this command should trigger your settlement building algorithm, which should construct a settlement within the given bounding box. This allows for a similar application of the algorithm than the MCEdit filter. We will load the three unseen competition maps with a regular Minecraft client, and execute the command BuildSettlement with your mod loaded. This should generate a settlement inside the bounding box, which is then saved and send to the judges.  
+                  <br>We are currently testing a framework to give you an example, and will supply this framework soon. But you do not need to start based on our framework and can create your own Forge based mod. Also, we highly recommend that you submit early, and contact us, so we can verify that your code runs on our computers.</a>
+                  <br><br>
+                  <a>For both cases, if you have any questions, feel free to talk to us on discord or twitter.</a>
+                </div>          
+                <div class="tab-pane fade" id="nav-challenges" role="tabpanel" aria-labelledby="nav-challenges-tab">
+                  <a>This section is about the specific challenges in generating a Minecraft settlement on a given map. We think that those are some of the obstacles that need to be overcome to move closer to human-level design. We should point out, though, that this list is not exhaustive. It is likely that there are other challenges and obstacles to get to human-like settlement generation. Furthermore, we consider the challenges outlined here ambitious goals to move towards, and do not expect them to be fully solved right away.
+                  <br>
+                  The evaluation criteria that will be given to the judges are based on these challenges, because we want participants to address these problems. </a>
+                  <br><br>
+                  <h3 style="color:gold">Adaptation to Environment and Terrain</h3>
+                  <a>Real-life human settlements are adapted towards their surrounding environment and terrain in multiple ways. On a per-building basis, houses and structures reflect the climate conditions they are built in. Furthermore, the environment of a settlement might also dictate the available resources for construction, and certain conditions might require specific types of buildings, such as irrigation, shelter, etc. A house in the cold climate of Edinburgh, for example, might be built sturdy, to protect against wind and cold and keep the warmth in. Likewise, the easy availability of stone might influence the choice of building material.
+                  <br><br>
+                  Real-life settlements are also adapted to the immediate terrain they are in. Natural features, such as mountains or lakes, play a role in the selection of where to settle. Some terrain features can be both positive and negative for a specific settlement, and settlements are often built to take advantage of the benefits and to compensate for the problems. A river, for example, might provide more food and added mobility via ship travel, but might also limit mobility by foot, and be a potential flooding hazard. A settlement might subsequently be built close to the river (or even more likely, at a good location to cross the river), to take advantage of the benefits. The same settlement might also build a dam to protect against flooding, and houses close to the water might sit on stilts. If the settlement dumps waste into the river there might also be a development of different districts, where better, more desirable houses are further up on the river.
+                  <br><br>
+                  On the other hand, humans change the terrain and environment in a limited fashion to better suit their needs. While it might be impossible to remove a mountain or an ocean, it might be possible to build a canal or tunnel. 
+                  <br><br>
+                  In summary, human settlements are shaped by and in turn shape the terrain and environment around them. If we study human-built settlements in Minecraft, we can see that these principles are realized in some existing builds. AI settlement generators, on the other hand, struggle to adapt to environment and terrain. They often rely on flattening large areas and then building settlements that do not reflect the surrounding map at all. Similarly, the houses and structures built by them are often templates that get placed as a whole unit, and are in no way reflective of the environment they are in. As part of this challenge, we encourage participants to develop generators that produce different settlements for different kinds of maps, reflecting the available materials, surrounding terrain and environmental conditions. In particular, successful entries should generate settlement that fit into the topography of the map without changing it too much, and build structures that fit into the topography. We also encourage participants of the challenge to think of other ways in which the given maps influences the generated settlement, ideally in such a fashion that it is evident to a human observer what kind of adaptation happened. Ideally, different maps should lead to different settlements, and it should be clear in which way the settlements where shaped by the map. Also note, that there is some overlap with the other three criteria, as their particular solutions are also often ideally adapted to the underlying map.</a>
+                  <br><br>
+                  <h3 style="color:gold">Functionality from an Embodied Perspective</h3>
+                  <a>
+                    Minecraft is not just a creativity tool, but also a game. Subsequently, a Minecraft settlement is not just an aesthetic artifact; it also needs to fulfill certain functional roles. One big aspect of this is accessibility and mobility. Is it actually possible to walk through the settlement and reach its different parts? Are there doors into the buildings, are the bridges over the river? How easy is it to navigate the settlement? A second big function a settlement provides is protection from various dangers. Is the settlement well lit, or does it otherwise prohibit mobs from spawning? Does the settlement manage to keep dangerous mobs outside? Are there other forms of defenses and traps to protect the player? Finally, there is also a need to obtain food and process it - so is there an accessible way to produce food and not starve? This list of functional requirements is not exhaustive - it is just meant to give some examples.
+                    <br><br>
+                    This criterion does have a certain overlap with the challenge of adaptivity. Certain functionality only needs to be provided in some cases. For example, bridges compensate for reduced mobility introduced by obstacles. They are an adaptation to reduce the negative effects of the terrain. Other functionality takes advantage of given terrain features, such as river lock further enhancing the mobility of an existing waterway.
+                    <br><br>
+                    This should also be considered, not just from a player perspective, but also under the assumption that the NPC villagers living in the settlement have similar needs. There is crossover here with the next section, because some functionality displayed in typical human-build settlement is not functional in the strict sense. For example, in reality a lot of houses have pitched roof to ensure better rain water runoff. In Minecraft, this is not necessary (as rain does not pool on the ground), but players still build houses with pitched roofs. This narrative functionality alludes to a functionality we understand, yet is not strictly functional in Minecraft. We still encourage the inclusion of such functional elements. Ideally, these narrative functionalities should also be adaptive to the environment. So, pitched roofs should be more popular in a rainy swamp than in a dry dessert, etc.
+                    <br><br>
+                    In summary, the fact that there is an actual player in the world gives us an embodied perspective. The avatar can interact with the world in a variety of different ways, and a settlement can provide different affordances to the player. The challenge in this competition is to produce a generator that can ensure that the settlement provides a maximum of functionality and affordances for the player, while also satisfying the other criteria.</a>
+                    <br><br>
+                    <h3 style="color:gold">Believable and Evocative Narrative</h3>
+                    <a>
+                    Human settlements are not just collections of functional buildings, but they also tell a story about how they came about, who are the people living there, and how they see the world. When we look at human-created Minecraft settlements, we can often see how certain human or imagined cultures are reflected in the created buildings. There are cities that resemble ancient Rome, mythical Elven forest outposts, and modern US cities. Often, the buildings also reflect very clear narrative ideas, such as “this is a defensive mining outpost built in a harsh environment”, or “this is a capital city, built to impress foreign and domestic visitors alike”. These settlements are evocative, i.e. they manage to transport this story by looks alone. Relating to the earlier challenge of adaptivity, the better settlements also evoke narratives that work well with the terrain and biome they are in. The narrative they evoke should fit the terrain and environment of the given map, and ideally arise from it. Different maps should result in different narratives.
+                    <br><br>
+                    Human settlements also reflect how they came about. Medieval cores of modern cities, for example, tell a part of a settlement's origin story. This is something rarely seen, even in human-made Minecraft builds, as settlements here are created with the final state in mind. But procedural content generation does have a tradition of simulationist approaches, which would be a possibility for this challenge. An AI could simulate people living and building a settlement over several stages, rebuilding or replacing structures, or slowly modernizing them. This could solve several of the previous problems, as buildings and the overall settlement would be the actual result of an adaptive process, and the produce of an actual sequence of events forming the basis for a possible narrative.
+                    <br><br>
+                    There is also a certain overlap between narrative and functional requirements. How easy the player can obtain wood for building and further process it is a functional requirement. To satisfy this a settlement could have a nearby forest and a workbench nearby. But to make this work with a narrative of a settlement that relies on wood production it might also be good to build a structure that looks like a sawmill, and a street to transport the goods to town. This would not produce any additional functionality to the player (or the digital villagers), but it would tell a narrative that aligns with the functionality provided to the player. Similarly, there could also be elements that have purely narrative functionality, i.e. structures that have a believable fictional use that is not immediately reflected in the game mechanics. For example, a settlement could have an aqueduct to provide water, even though Minecraft characters do not need to drink.
+                    <br><br>
+                    To summarize, the particular challenge here is not just about narrative generation, but also about generating a narrative that fits with the generated settlement, and ensuring that this narrative is communicated to the player with the generated structures. Inspiration by existing, historical or imagined cultures can help to transport this narrative. The aim is to produce something that is both believable and evocative, while still being aligned with the previous criteria.
+                    </a>
+                    <br><br>
+                    <h3 style="color:gold">Visual Aesthetics</h3>
+                    <a>Aesthetics are arguably subjective, yet architects and city planners usually follow a range of principles when it comes to designing a settlement or a house. While untrained humans manage to intuitively realize these principles with some success, it is difficult to design an algorithm with automated aesthetic judgment. Existing Minecraft mods that add structures to the world circumvent this problem by hand-designing appropriate templates, and then building a settlement out of those templates. This solution has several problems: it allows for little variation between the buildings, as they all need to be pre-designed, and it also allows for little adaptation of the buildings to the surrounding buildings, the underlying terrain, etc. Buildings are sometimes parameterized, and hence reflect some specific environmental settings, such as available materials or the climate they are in. This makes them more adaptive, but there seems to be trade-off between controlling the exact look of a structure, and making it adaptable towards uncontrolled environmental factors. The challenge in our case is to ensure that buildings still follow basic design principles while being adaptive, functional and evocative. 
+                    <br><br>
+                    There is also the further problem that the overall settlement itself should follow certain aesthetic rules. How buildings are aligned and what sight lines exist can play an important role for the overall feel of the settlement. Finally, there is also the question of how well the particular aesthetic expression chosen aligns with the other challenges. For example, a settlement which has a narrative of being a foreboding fortress, and is designed with that functionality, should also have an aesthetic that reflects this.
+                    </a>
+                    <h3 style="color:gold">Bonus Challenge: Chronicle</h3>
+                    <a>While cities implicitly tell a story about their inhabitants, cities also often have explicit stories about their history. These chronicles contain notable events that affected and shaped the settlement, such as fires, wars of periods of vibrant trade. The can also provide a lot of additional context, such as what was the function or reason for the settlement during different time periods, or what ideas and philosophies have shaped the settlements development. They also often contain stories about important people that shaped the city. Basically, anything that could be written about a city and would be achieved in the city is appropriate.
+                    <br><br>
+                    For this challenge, your task is to create a chronicle that is currently stored in the city. It should be written as a Minecraft book, and should contain text relating to the generated city. This challenge relates back to several of our earlier criteria, such as adaptivity and narrative. The chronicle should be adapted to the actual generated city, and should the story of that specific city. The less generic this story is, the better. The chronicle challenge is optional, and entries will be evaluated based on the overall quality of the chronicle, and how well it fits with the different cities generated.
+                    </a>
+                </div>
+                <div class="tab-pane fade" id="nav-examples" role="tabpanel" aria-labelledby="nav-examples-tab">
+                  <a>Here is a list of settlement generators and filters for MCEdit that showcase some of the things we are looking for in a generator.</a>
+                  <br><br>
+                  <h4>Past Competitors</h4>
+                  <a>Filip Skwarski: <a href="files/Entry1.zip"></a>files</a>
+                  <br><br>
+                  <a>Adrian Brightmoore: <a href="files/Entry2.zip">files</a></a>
+                  <br><br>
+                  <a>Changxing and Shaofang: <a href="files/Entry3.zip">files</a></a>
+                  <br><br>
+                  <a>Rafael Fritsch: <a href="files/Entry4.zip">files</a></a>
+                  <br><br>
+                  <a>A few awesome filters by Adrian Brightmoore: <a href="http://www.brightmoore.net/home/mcedit-filters">filters</a></a>
+                  <br><br>
+    			        <a>Here is a list of videos of good, human-created settlements that showcase some of the things we are looking for in a generator.</a>
+    			         <br><br>			  
+    			         <h4>Several Settlement builds by FyreUK</h4>
+                  <a>Lakeside City: <a style="color:gold; text-decoration: underline;" href="https://www.youtube.com/watch?v=pZfwUwDJdV8">video</a><br>
+                  Good examples for coherent theming of the overall settlement, adaptive towards its bay location (looks like a harbour city), houses well adapted to the height levels around the bay.</a><br><br>
+
+                  <a>The Land of Arkane: <a style="color:gold; text-decoration: underline;" href="https://www.youtube.com/watch?v=5iTctMafYOM">video</a><br>
+                  Good example for theming, believable structures on the water, good integration of the existing height map. Good bridges and walkways to ensure mobility.</a><br><br>
+
+                  <a>Waterfall City: <a style="color:gold; text-decoration: underline;" href="https://www.youtube.com/watch?v=TRplkc1DbUg">video</a><br>
+                  Visually distinct districts, combination of singular large structures with smaller, more repetitive houses. The smaller houses are themed according to district, yet show a level of variability.</a><br><br>
+
+                  <a>Frozen Summit: <a style="color:gold; text-decoration: underline;" href="https://www.youtube.com/watch?v=Ptu5WOTbubg&list=PL6C732E31C70607EF&index=12">video</a><br>
+                  The building material and style of building reflects the environmental conditions. Also, larger structures that are adapted to the changing height.</a><br><br>
+                  
+                  <h4>Other people:</h4>
+                  <a>Monteriggioni Recreation: <a href="https://www.youtube.com/watch?v=Jyoow1zT7FI" style="color:gold; text-decoration: underline">video</a><br>
+                  Recreation of the historical city of Monteriggioni in Minecraft.
+    			       <br><br>
+    			       <a>Broville: <a href="https://www.youtube.com/watch?v=Ha8Fs3mbQs8" style="color:gold; text-decoration: underline">video</a><br>		 
+                  An example of a modern city in Minecraft. Also features some examples of interior design. </a><br><br>
+                </div>
+                <div class="tab-pane fade" id="nav-faq" role ="tabpanel" aria-labelledby="nav-faq-tab">
+                  <a>
+                  <b style="color:gold">I don’t like python, can I submit in Java?</b>
+                  <br>
+                  Yes, this year, we offer an option to submit a Java based mod. We will provide a framework for that soon. For details, have a look at the submission guidelines.
+                  <br><br>
+                  <b style="color:gold">How much can I change the map?</b>
+                  <br>
+                  There are no limitations in the rules about how much you can change the map. You can add and remove as many blocks as you want. However, one of the evaluation criteria is adaptation to the terrain and environment. So, if you simply flatten the given map, and then build a settlement, you will not score high on adaptation. But there should be no problem with believable modifications to the terrain, especially if it is clear how they help the settlement. So, making room for important roads, filling in minor holes, digging a canal or tunnel to connect to part of the map, all these things should be fine. Removing a whole mountain might be a bit much, though.
+                  <br> 
+                  We might introduce a limitation on how many blocks can be changed for future competitions, but there is no limit for the first competition.   
+                  <br><br>
+                  <b style="color:gold">Am I limited by the resources on the map?</b>
+                  <br>
+                  No, there is not rule that the settlement must be built from resources found on the map. On the other hand, predominantly building from resources that are present on the map is a form of adaptation to the environment. Then again, rich parts of a city might deliberately use resources that are hard to come by locally. 
+                  <br><br>
+                  <b style="color:gold">What will the competition maps look like?</b>
+                  <br>
+		  The competition maps will be based what the build-in terrain generation in Minecraft produces. We will ensure that there are no existing surface settlements on the competition maps. There is no limitation in terms of biomes, so everything that you can find in a Minecraft world might theoretically pop up. We might slightly alter the maps to provide some additional terrain features or obstacles. The test maps should give you a rough idea of what you can expect. We aim to provide maps with a range of difficulty, so some maps should be easier to deal with than others.
+                  <br><br>
+                  <b style="color:gold">What will be the size of the maps?</b>
+                  <br>
+                  When running the algorithms, they will be provided with a bounding box – the area within the bounding box is the area in which the settlement needs to be build. The area will be around 256 by 256 blocks (and from bedrock to the sky limit) in size, but the exact size might vary. The algorithms should be able to adapt to varying map sizes. For example, they should be able to deal with a 200 by 300 blocks map. We guarantee that the maps are rectangular.
+                  <br><br>
+                  <b style="color:gold">Why are the maps only 256 by 256?</b>
+                  <br>
+                  There are two reasons for not making the maps too small. First, judges need to be able to evaluate a settlement in a reasonable time frame and should therefore be able to walk through and see most of the settlement within a few minutes. We also wanted to ensure that we can run all algorithms on our end in a reasonable time frame for the evaluation. Nevertheless, we encourage participants to write algorithms that can adapt to larger and smaller maps.
+                  <br><br>
+                  <b style="color:gold">Will I be disqualified if my algorithm runs longer than 10 minutes?</b>
+                  <br>
+                  The 10 minutes are a rough guideline – to give participants a general idea of how long they can take. If your algorithm takes a bit longer on our PC, then this is not a problem. Once it goes on for an hour or so, we will likely interrupt it.
+                  <br><br>
+                  <b style="color:gold">Will I be disqualified if my code does not run on your machine? </b>
+                  <br>
+                  If we cannot get your algorithm to run on our machine, then we cannot evaluate it performance. If you are worried, we suggest you submit early, and contact us. We are willing to have a look and see if your algorithm runs on our setup. You can replace your submission later with a new submission to update it. 
+                  <br><br>
+                  <b style="color:gold">You talk about culture in your evaluation guidelines, can I build a fantasy city?</b>
+                  <br>
+                  Yes, our evaluation criteria are not limited to human or historical cultures or settlements. Keep in mind that there are two criteria, functionality and narrative. For functionality, you have to work with the game mechanics provided by Minecraft. So, your floating city should still have a way to get around for its inhabitants and should not be lethal to a player. But in terms of the narrative evocation, you are free to generate fictional of futuristic settlement – provided that they follow consistent rules, which should ideally be evident from the way the settlement is build.</a>
+                </div>
+              </div>               
+            </div>
+          </div>
+        </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+    $('.smooth-goto').on('click', function() {  
+        $('html, body').animate({scrollTop: $(this.hash).offset().top - 100}, 1000);
+        return false;
+    });  
+    </script>
+  </body>
+</html>
