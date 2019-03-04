@@ -8,7 +8,7 @@ const util 		= require('util');
 
 module.exports = function(app, passport) {
 	var multer 		= require('multer');
-	var upload = multer({dest: './submissions/2018/settlement_generation/submissions/'});
+	var upload = multer({dest: './submissions/2019/settlement_generation/submissions/'});
 	var fs = require('fs');
 
 	app.use(bodyParser.json());
@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
 			res.render('index.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
-			res.render('index.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed });	
+			res.render('index.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed });
 		}
 	});
 
@@ -37,8 +37,8 @@ module.exports = function(app, passport) {
 			res.render('about.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
-			res.render('about.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed });	
-		}	
+			res.render('about.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed });
+		}
 	});
 
 	// ================================================================
@@ -48,7 +48,7 @@ module.exports = function(app, passport) {
 		let isAuthed = req.isAuthenticated();
 		if(isAuthed) {
 			res.render('rules.ejs', { message: req.flash('rulesMessage'), isAuthed : isAuthed, user : req.user });
-		} 
+		}
 		else {
 			res.render('rules.ejs', { message: req.flash('rulesMessage'), isAuthed : isAuthed });
 		}
@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
 			res.render('submit.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
-			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });	
+			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
 		}
 	});
 
@@ -80,13 +80,13 @@ module.exports = function(app, passport) {
 			// update user info for submission
 			if(foundUser.submissions == undefined) {
 				foundUser.submissions = {};
-				foundUser.submissions.s_2018 = {};
+				foundUser.submissions.s_2019 = {};
 
 			}
-			foundUser.submissions.s_2018.settlement_generator_submitted = true;
-			foundUser.submissions.s_2018.settlement_generator_about = req.body.about;
-			foundUser.submissions.s_2018.settlement_generator_name = req.body.generator_name;
-			foundUser.submissions.s_2018.settlement_generator_submit_time = new Date();
+			foundUser.submissions.s_2019.settlement_generator_submitted = true;
+			foundUser.submissions.s_2019.settlement_generator_about = req.body.about;
+			foundUser.submissions.s_2019.settlement_generator_name = req.body.generator_name;
+			foundUser.submissions.s_2019.settlement_generator_submit_time = new Date();
 			// foundUser.submissions.s_2018.settlement_generator_hashname = req.file.name;
 			// change file name to user email
 			fs.rename('./submissions/2018/settlement_generation/submissions/' + req.file.filename,
@@ -105,7 +105,7 @@ module.exports = function(app, passport) {
 			});
 		}
 		else {
-			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });	
+			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
 		}
 
 
@@ -121,8 +121,8 @@ module.exports = function(app, passport) {
 			res.render('results/settlement_generation/results_2018.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user});
 		}
 		else {
-			res.render('results/settlement_generation/results_2018.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed});	
-		}	
+			res.render('results/settlement_generation/results_2018.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed});
+		}
 	});
 	// 	console.log(req.body); //form fields
 	// 	/* example output:
@@ -199,7 +199,7 @@ module.exports = function(app, passport) {
 	app.get('/login', function(req, res) {
         let isAuthed = req.isAuthenticated();
         let user = req.user;
-        res.render('login.ejs', { isAuthed : isAuthed, message: req.flash('loginMessage') }); 
+        res.render('login.ejs', { isAuthed : isAuthed, message: req.flash('loginMessage') });
 	});
 
     // process the login form
@@ -208,7 +208,7 @@ module.exports = function(app, passport) {
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-	
+
 
 	// ================================================================
 	// SIGNUP
@@ -218,11 +218,11 @@ module.exports = function(app, passport) {
 		let isAuthed = req.isAuthenticated();
 		// render the page and pass in any flash data
 		if(!isAuthed) {
-			res.render('signup.ejs', { isAuthed : isAuthed, message: req.flash('signupMessage') });	
+			res.render('signup.ejs', { isAuthed : isAuthed, message: req.flash('signupMessage') });
 		}
-		
+
 	});
-	
+
   	// process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
@@ -236,6 +236,7 @@ module.exports = function(app, passport) {
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
+		let isAuthed = req.isAuthenticated();
 		res.render('profile.ejs', { user : req.user, isAuthed : isAuthed, message : req.flash('profileMessage') });
 	});
 
@@ -252,8 +253,7 @@ function isLoggedIn(req, res, next) {
 	// if user is authenticated
 	if(req.isAuthenticated())
 		return next();
-	
+
 	// if they aren't, redirect them to home page
 	res.redirect('/');
 }
-

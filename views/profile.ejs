@@ -1,6 +1,6 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
-<head runat="server">  
+<head runat="server">
 <meta charset="utf-8">
     <title>The GDMC Competition</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'> -->
     <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
-    
+
     <style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 60px;
-        font-family: 'Londrina Solid';font-size: 22px;        
-        
+        font-family: 'Londrina Solid';font-size: 22px;
+
       }
       main {
         padding-top:70px;
@@ -31,7 +31,7 @@
       .container > hr {
         margin: 60px 0;
       }
-    
+
       /* Main marketing message and sign up button */
       .jumbotron {
         margin: 80px 0 10px;
@@ -41,7 +41,7 @@
         font-size: 100px;
         line-height: 1;
       }
-      .jumbotron .lead {    
+      .jumbotron .lead {
         font-size: 24px;
         line-height: 1.25;
       }
@@ -100,8 +100,8 @@
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
-</head>  
-<body>  
+</head>
+<body>
   <% include header.ejs %>
 
       <div class="containter">
@@ -115,6 +115,8 @@
             <% if (message.length > 0) { %>
               <div class="alert alert-info"><%= message %></div>
             <% } %>
+        <div class="container">
+
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
@@ -182,7 +184,7 @@
                           <div class="col-md-3 mb-3">
                             <a>About:</a>
                           </div>
-                          <div class="col-md-9 mb-3">  
+                          <div class="col-md-9 mb-3">
                             <a><%= user.submissions.s_2018.settlement_generator_about %></a>
                           </div>
                         </div>
@@ -190,14 +192,14 @@
                           <div class="col-md-3 mb-3">
                             <a>Submitted Date:</a>
                           </div>
-                          <div class="col-md-9 mb-3">  
+                          <div class="col-md-9 mb-3">
                             <a><%= user.submissions.s_2018.settlement_generator_submit_time %></a>
                           </div>
-                        </div>                        
-                        
+                        </div>
+
                       <%} %>
                   </div>
-                </div>                
+                </div>
                 <br>
                 <div class="row">
                   <div class="col-md-12 mb-3">
@@ -217,7 +219,7 @@
                       <label for="firstName">First Name:</label>
                       <input type="text" id="firstName" name="firstName" class="form-control" value=<%= user.firstName %> >
                     </div>
-                  </div>                
+                  </div>
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label class="mr-sm-2" for="countryField">Country:</label>
@@ -239,13 +241,15 @@
                       <label for="websiteField">Website:</label>
                       <input type="text" id="websiteField" class="form-control" name="website" value=<%= user.website %> >
                     </div>
-                  </div>  
+                  </div>
                   <div class="form-row">
                     <button type="submit" class="btn btn-primary mb-2">Save Changes</button>
-                  </div>              
+                  </div>
                 </form>
               </div>
-            </div>                        
+            </div>
+        </div>
+
       </div>
     </div>
     <!-- Le javascript
@@ -263,4 +267,4 @@
         document.getElementById("selectedCountry").value = <%= user.country %>;
     </script>
 </body>
-</html>  
+</html>
