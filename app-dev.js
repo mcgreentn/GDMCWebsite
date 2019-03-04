@@ -25,7 +25,9 @@ var app = express();
 var configDB = require('./config/database.js');
 // configuration ============================================
 
-mongoose.connect('mongodb://localhost/db_name'); // connect to our DB
+mongoose.connect('mongodb://localhost/db_name', function(err) {
+    console.log("failed to connect to DB")
+}); // connect to our DB
 
 require('./config/passport')(passport); // pass passport for configuration
 
