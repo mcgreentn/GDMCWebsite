@@ -171,13 +171,13 @@
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="settlementGen" role="tabpanel" aria-labelledby="settlementGen-tab">
                     <br>
-                      <% if(user.submissions.s_2018.settlement_generator_submitted) { %>
+                      <% if(user.submissions.s_2019.settlement_generator_submitted) { %>
                         <div class="row">
                           <div class="col-md-3 mb-3">
                             <a>Generator Name:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2018.settlement_generator_name %></a>
+                            <a><%= user.submissions.s_2019.settlement_generator_name %></a>
                           </div>
                         </div>
                         <div class="row">
@@ -185,7 +185,7 @@
                             <a>About:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2018.settlement_generator_about %></a>
+                            <a><%= user.submissions.s_2019.settlement_generator_about %></a>
                           </div>
                         </div>
                         <div class="row">
@@ -193,7 +193,16 @@
                             <a>Submitted Date:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2018.settlement_generator_submit_time %></a>
+                            <a><%= user.submissions.s_2019.settlement_generator_submit_time %></a>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>Chronicle Challenge Participant:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">
+                            <a><%= user.submissions.s_2019.chronicle_included %></a>
                           </div>
                         </div>
 

@@ -87,10 +87,16 @@ module.exports = function(app, passport) {
 			foundUser.submissions.s_2019.settlement_generator_about = req.body.about;
 			foundUser.submissions.s_2019.settlement_generator_name = req.body.generator_name;
 			foundUser.submissions.s_2019.settlement_generator_submit_time = new Date();
+			if(req.body.chronicleIncluded == undefined) {
+				foundUser.submissions.s_2019.chronicle_included = false;
+			} else if(req.body.chronicleIncluded == 'on') {
+				foundUser.submissions.s_2019.chronicle_included = true;
+			}
+			console.log("chronicle: " + req.body.chronicleIncluded);
 			// foundUser.submissions.s_2018.settlement_generator_hashname = req.file.name;
 			// change file name to user email
-			fs.rename('./submissions/2018/settlement_generation/submissions/' + req.file.filename,
-			 './submissions/2018/settlement_generation/submissions/' + foundUser.email + '.zip', function(err) {
+			fs.rename('./submissions/2019/settlement_generation/submissions/' + req.file.filename,
+			 './submissions/2019/settlement_generation/submissions/' + foundUser.email + '.zip', function(err) {
 			    if ( err ) console.log('ERROR: ' + err);
 			});
 			// save the user
