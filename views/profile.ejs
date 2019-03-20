@@ -104,7 +104,7 @@
 <body>
   <% include header.ejs %>
 
-      <div class="containter">
+      <div class="container">
             <h2><%= user.firstName %> - Profile</h2>
             <br>
 
@@ -205,6 +205,16 @@
                             <a><%= user.submissions.s_2019.chronicle_included %></a>
                           </div>
                         </div>
+                        <% if(user.submissions.s_2019.chronicle_included == 'true') {%>
+                          <div class="row" id="chronicleInstructionsAbout">
+                            <div class="col-md-3 mb-3">
+                              <a>Chronicle Insructions:</a>
+                            </div>
+                            <div class="col-md-9 mb-3">
+                              <a><%= user.submissions.s_2019.chronicle_about %></a>
+                            </div>
+                          </div>
+                        <%}%>
 
                       <%} %>
                   </div>
