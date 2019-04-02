@@ -168,6 +168,7 @@ module.exports = function(app, passport) {
 	// process the update profile form
 	app.post('/save-profile', isLoggedIn, function(req, res) {
 	    var nUser;
+	    let isAuthed = req.isAuthenticated();
 	    user.findById(req.session.passport.user, function(err, foundUser) {
 		if (err) throw err;
 
