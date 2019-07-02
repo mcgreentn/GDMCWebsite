@@ -53,6 +53,18 @@ module.exports = function(app, passport) {
 			res.render('rules.ejs', { message: req.flash('rulesMessage'), isAuthed : isAuthed });
 		}
 	});
+	// ================================================================
+	// RESEARCH
+	// ================================================================
+	app.get('/research', function (req, res) {
+		let isAuthed = req.isAuthenticated();
+		if (isAuthed) {
+			res.render('research.ejs', { message: req.flash('rulesMessage'), isAuthed: isAuthed, user: req.user });
+		}
+		else {
+			res.render('research.ejs', { message: req.flash('rulesMessage'), isAuthed: isAuthed });
+		}
+	});
 
 	// ================================================================
 	// SUBMIT
