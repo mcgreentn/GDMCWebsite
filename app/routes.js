@@ -131,16 +131,15 @@ module.exports = function(app, passport) {
 
 	});
 
-	app.get('/results_2018', function(req, res) {
+	app.get('/results', function (req, res) {
 		console.log(req.Url);
 		console.log("Hello")
 		let isAuthed = req.isAuthenticated();
-		if(isAuthed)
-		{
-			res.render('results/settlement_generation/results_2018.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user});
+		if (isAuthed) {
+			res.render('results.ejs', { message: req.flash('homeMessage'), isAuthed: isAuthed, user: req.user });
 		}
 		else {
-			res.render('results/settlement_generation/results_2018.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed});
+			res.render('results.ejs', { message: req.flash('homeMessage'), isAuthed: isAuthed });
 		}
 	});
 	// 	console.log(req.body); //form fields

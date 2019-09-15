@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The GDMC Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The website for GDMC">
+    <meta name="author" content="Michael C. Green">
+    <link rel="icon" href="images/Icon.png">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Londrina Solid' rel='stylesheet'> -->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+    
+        background: url('images/background.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    
+        background-attachment: fixed;
+        font-family: 'Londrina Solid';
+        font-size: 22px;
+        font-weight: 100;
+      }
+    
+      a {
+        color: white;
+      }
+    
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+    
+      .container>hr {
+        margin: 60px 0;
+      }
+    
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0 10px;
+        text-align: center;
+      }
+    
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+    
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+    
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+    
+      .jumbotron h4 {
+        padding: -10px;
+      }
+    
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+    
+      .marketing p+h4 {
+        margin-top: 28px;
+      }
+    
+      .main_title {
+        padding-top: 100px;
+    
+      }
+    
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+    
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+    
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+    
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255, 255, 255, .75);
+        border-right: 1px solid rgba(0, 0, 0, .1);
+      }
+    
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+    
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+    
+      .carousel {
+        padding-bottom: 20px;
+        width: 120%;
+        background-position: center
+          /* or whatever position you wanted */
+          background-size: cover;
+        margin: auto;
+      }
+    
+      #carouselExampleIndicators {
+        margin: auto;
+      }
+    
+      .carousel-item {
+        width: 120%;
+        background-repeat: no-repeat;
+        background-position: center
+          /* or whatever position you wanted */
+          background-size: cover;
+      }
+    
+      .carousel-inner>.item>img,
+      .carousel-inner>.item>a>img {
+        width: 100%;
+        /* use this, or not */
+        margin: auto;
+      }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+  <% include ./header.ejs %>
+    <div class="container-fluid" style="padding-top: 100px">
+      <div class="row" style="padding-left: 15px;">
+          <div class="col-md-12 col-xs-12">
+            <h1 class="alert alert-minecraft-stonebrick" style="text-align: center">Results</h1>  
+          </div>
+      </div>
+      <div class="row" style="padding-left: 15px;">
+        <div class="col-md-12 col-xs-12">
+          <div class="alert alert-minecraft-stonebrick">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-sg-tab" data-toggle="tab" href="#nav-sg" role="tab"
+                  aria-controls="nav-sg" aria-selected="true">Settlement Generation</a>
+                <a class="nav-item nav-link disabled" id="nav-cs-tab" data-toggle="tab" href="#nav-cs" role="tab"
+                  aria-controls="nav-cs" aria-selected="false">Coming Soon!</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-sg" role="tabpanel" aria-labelledby="nav-sg-tab">
+                <div class="row" style="padding-left: 15px;">
+                  <div class="col-md-12 col-xs-12">
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-2018-tab" data-toggle="tab" href="#nav-2018" role="tab" aria-controls="nav-2018"
+                          aria-selected="true">2018</a>
+                        <a class="nav-item nav-link" id="nav-2019-tab" data-toggle="tab" href="#nav-2019" role="tab"
+                          aria-controls="nav-2019" aria-selected="false">2019</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-2018" role="tabpanel" aria-labelledby="nav-2018-tab">
+                        <div class="row" style="padding-left: 15px;">
+                          <div class="col-md-12 col-xs-12">
+                            <a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=10JmqMigTdNMG4QF88S9RZhfFaPBbtegE">All Entry Maps</a>
+                            <a>--||--</a>
+                            <a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1Hc9OmfmsQ4GUC_lHtIwRvMsvSsO1uaBr">Raw Competition Maps</a>
+                          </div>
+                        </div>
+                        <div class="row" style="padding-left: 15px;">
+                          <div class="col-md-12 col-xs-12">
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th score="col">Entry </th>
+                                  <th scope="col">Author</th>
+                                  <th scope="col">Twitter</th>
+                                  <th scope="col">Adaptability</th>
+                                  <th scope="col">Functionality</th>
+                                  <th scope="col">Narrative</th>
+                                  <th scope="col">Aesthetic</th>
+                                  <th scope="col">Overall</th>
+                                  <th scope="col">Files</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Filip Skwarski</td>
+                                  <td>n/a</td>
+                                  <td>5.42</td>
+                                  <td>4.71</td>
+                                  <td>3.17</td>
+                                  <td>4.21</td>
+                                  <td>4.38</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=19T09qQhdIYWs31TLLaGaZogH-ye_P_HA">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Adrian Brightmoore</td>
+                                  <td>@TheWorldFoundry</td>
+                                  <td>2.33</td>
+                                  <td>2.21</td>
+                                  <td>2.13</td>
+                                  <td>3.54</td>
+                                  <td>2.55</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1un54LzLSnoiqEZnDbcHb9Z79hETb2GKs">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Changxing and Shaofang</td>
+                                  <td>n/a</td>
+                                  <td>0.96</td>
+                                  <td>2.96</td>
+                                  <td>2.13</td>
+                                  <td>2.75</td>
+                                  <td>2.20</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1dVwLxKf7rTTifQK7CZoJ6BzxRuWPHTqh">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                  <td>Rafael Fritsch</td>
+                                  <td>@UrsaMinorDev</td>
+                                  <td>2.81</td>
+                                  <td>3.25</td>
+                                  <td>2.46</td>
+                                  <td>3.79</td>
+                                  <td>3.08</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1YpnRgMHdQlcYu-0UjENYhrfYm576rty-">files</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-2019" role="tabpanel" aria-labelledby="nav-2019-tab">
+                        <div class="row" style="padding-left: 15px;">
+                          <div class="col-md-12 col-xs-12">
+                            <a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1SMdW6vNW8cVj3PdbF1uMK4yeoIzAvmLK">All Entry Maps</a>
+                            <a>--||--</a>
+                            <a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=18B8IQduF0xl43EpsAMeJ9IJrM486akRH">Raw Competition Maps</a>
+                          </div>
+                        </div>
+                        <div class="row" style="padding-left: 15px;">
+                          <div class="col-md-12 col-xs-12">
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th score="col">Entry </th>
+                                  <th scope="col">Author</th>
+                                  <th scope="col">Twitter</th>
+                                  <th scope="col">Adaptability</th>
+                                  <th scope="col">Functionality</th>
+                                  <th scope="col">Narrative</th>
+                                  <th scope="col">Aesthetic</th>
+                                  <th scope="col">Overall</th>
+                                  <th scope="col">Files</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Adrian</td>
+                                  <td>@TheWorldFoundry</td>
+                                  <td>2.82</td>
+                                  <td>3.36</td>
+                                  <td>3.91</td>
+                                  <td>3.91</td>
+                                  <td>3.50</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=19jRqunPUP6kYVKSDxK8py_iGR1rW-_Rq">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>ArtCodeOutdoors</td>
+                                  <td>n/a</td>
+                                  <td>5.09</td>
+                                  <td>4.45</td>
+                                  <td>4.73</td>
+                                  <td>5.73</td>
+                                  <td>4.95</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1dmOFhYZ706L_K-O5fcz22_uN86Hqjiuf">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Berlier</td>
+                                  <td>@fzy81</td>
+                                  <td>4.36</td>
+                                  <td>4.18</td>
+                                  <td>4.27</td>
+                                  <td>5.55</td>
+                                  <td>4.70</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1-IsUZFiXHLQh55-9h75-AscHZlR8eBU3">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                  <td>ehauckdo</td>
+                                  <td>@ehauckdo</td>
+                                  <td>3.09</td>
+                                  <td>4.27</td>
+                                  <td>3.73</td>
+                                  <td>4.45</td>
+                                  <td>3.95</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1V5vmlSxoV1LDpvMG9cXgRF2n6f6HogdR">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">5</th>
+                                  <td>Julos14</td>
+                                  <td>n/a</td>
+                                  <td>5.45</td>
+                                  <td>5.00</td>
+                                  <td>5.00</td>
+                                  <td>5.91</td>
+                                  <td>5.39</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1KpZ-Rkt2cFTejWILoQqF9P3rb9StImw7">files</a></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">6</th>
+                                  <td>Filip Skwarski</td>
+                                  <td>n/a</td>
+                                  <td>5.82</td>
+                                  <td>5.18</td>
+                                  <td>4.91</td>
+                                  <td>5.73</td>
+                                  <td>5.50</td>
+                                  <td><a style="text-decoration: underline; color:gold" href="https://drive.google.com/open?id=1LmL3P7fHdIgOWxA02-4TulKzof2qM6CN">files</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-cs" role="tabpanel" aria-labelledby="nav-cs-tab">
+                ...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Le javascript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+      $('.smooth-goto').on('click', function () {
+        $('html, body').animate({ scrollTop: $(this.hash).offset().top - 100 }, 1000);
+        return false;
+      });  
+    </script>
+  </body>
+</html>
