@@ -81,10 +81,11 @@ module.exports = function(app, passport) {
 	});
 
 	app.post('/submitgenerator', upload.single('uploadMe'), function(req,res){
+		let submissionAllowed = false;
 		console.log(req.file);
 		let isAuthed = req.isAuthenticated();
-		if(isAuthed) {
-
+		if(isAuthed && submissionAllowed) {
+			
 			user.findById(req.session.passport.user, function(err, foundUser) {
 			if (err) throw err;
 
@@ -122,6 +123,9 @@ module.exports = function(app, passport) {
 				res.render('profile.ejs', {isAuthed : isAuthed, user : foundUser, message: req.flash('profileMessage') });
 
 			});
+		}
+		else if (isAuthed && !submissionAllowed) {
+			res.render('profile.ejs', {isAuthed : isAuthed, user : foundUser, message: req.flash('profileMessage') });
 		}
 		else {
 			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
