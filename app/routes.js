@@ -73,7 +73,7 @@ module.exports = function(app, passport) {
 		let isAuthed = req.isAuthenticated();
 		if(isAuthed)
 		{
-			res.render('submit.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
+			res.render('profile.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
 			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
@@ -125,9 +125,7 @@ module.exports = function(app, passport) {
 			});
 		}
 		else if (isAuthed && !submissionAllowed) {
-			user.findById(req.session.passport.user, function(err, foundUser) {
-				res.render('profile.ejs', {isAuthed : isAuthed, user : foundUser, message: req.flash('profileMessage') });
-			});
+			res.render('profile.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
 			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
