@@ -39,7 +39,7 @@ var userSchema = mongoose.Schema({
             chronicle_included: String,
             chronicle_about: String,
             team_name: String,
-            opt_in: Boolean
+            publish_online: Boolean
         }
     }
 

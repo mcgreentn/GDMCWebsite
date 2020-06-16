@@ -103,9 +103,9 @@ module.exports = function (app, passport) {
                 foundUser.submissions.s_2020.team_name = req.body.team_name;
                 foundUser.submissions.s_2020.settlement_generator_submit_time = new Date();
                 if (req.body.publishOnline == undefined) {
-                    foundUser.submissions.s_2020.publishOnline = false;
+                    foundUser.submissions.s_2020.publish_online = false;
                 } else {
-                    foundUser.submissions.s_2020.publishOnline = true;
+                    foundUser.submissions.s_2020.publish_online = true;
                 }
                 if (req.body.chronicleIncluded == undefined) {
                     foundUser.submissions.s_2020.chronicle_included = false;
