@@ -130,7 +130,7 @@
                 <br>
                 <div class="row">
                   <div class="col-md-12 mb-3">
-                    <div class="alert alert-success" align="center">Welcome to your profile. From here you can modify your information, submit a competitor, or update one you already submitted!</div>
+                    <div class="alert alert-success" align="center">Welcome to your profile. From here you can modify your information, <br>submit a competitor, or update one you already submitted!</div>
                   </div>
                 </div>
                 <div class="row">
@@ -165,19 +165,36 @@
                 <br>
                 <ul class="nav nav-tabs" id="submissionsTab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="settlementGen-tab" data-toggle="tab" href="#settmentGen" role="tab" aria-controls="settmentGen" aria-selected="true">Settlement Generator</a>
+                    <a class="nav-link active" id="settlementGen-tab" data-toggle="tab" href="#s_2020" role="tab" aria-controls="s_2020" aria-selected="true">2020</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="settlementGen-tab" data-toggle="tab" href="#s_2019" role="tab"
+                      aria-controls="s_2019" aria-selected="false">2019</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="settlementGen-tab" data-toggle="tab" href="#s_2018" role="tab"
+                      aria-controls="s_2018" aria-selected="false">2018</a>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="settlementGen" role="tabpanel" aria-labelledby="settlementGen-tab">
+                  <!--2020-->
+                  <div class="tab-pane fade show active" id="s_2020" role="tabpanel" aria-labelledby="s_2020-tab">
                     <br>
-                      <% if(user.submissions.s_2019.settlement_generator_submitted) { %>
+                      <% if(user.submissions.s_2020.settlement_generator_submitted) { %>
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>Team Name:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">
+                            <a><%= user.submissions.s_2020.team_name %></a>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-md-3 mb-3">
                             <a>Generator Name:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2019.settlement_generator_name %></a>
+                            <a><%= user.submissions.s_2020.settlement_generator_name %></a>
                           </div>
                         </div>
                         <div class="row">
@@ -185,7 +202,15 @@
                             <a>About:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2019.settlement_generator_about %></a>
+                            <a><%= user.submissions.s_2020.settlement_generator_about %></a>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3 mb-3">
+                            <a>Publish Online:</a>
+                          </div>
+                          <div class="col-md-9 mb-3">
+                            <a><%= user.submissions.s_2020.publish_online %></a>
                           </div>
                         </div>
                         <div class="row">
@@ -193,10 +218,9 @@
                             <a>Submitted Date:</a>
                           </div>
                           <div class="col-md-9 mb-3">
-                            <a><%= user.submissions.s_2019.settlement_generator_submit_time %></a>
+                            <a><%= user.submissions.s_2020.settlement_generator_submit_time %></a>
                           </div>
                         </div>
-
                         <div class="row">
                           <div class="col-md-3 mb-3">
                             <a>Chronicle Challenge Participant:</a>
@@ -218,13 +242,92 @@
 
                       <%} %>
                   </div>
+                  <!--2019-->
+                  <div class="tab-pane fade show" id="s_2019" role="tabpanel" aria-labelledby="s_2019-tab">
+                    <br>
+                    <% if(user.submissions.s_2019.settlement_generator_submitted) { %>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>Generator Name:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2019.settlement_generator_name %></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>About:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2019.settlement_generator_about %></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>Submitted Date:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2019.settlement_generator_submit_time %></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>Chronicle Challenge Participant:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2019.chronicle_included %></a>
+                      </div>
+                    </div>
+                    <% if(user.submissions.s_2019.chronicle_included == 'true') {%>
+                    <div class="row" id="chronicleInstructionsAbout">
+                      <div class="col-md-3 mb-3">
+                        <a>Chronicle Insructions:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2019.chronicle_about %></a>
+                      </div>
+                    </div>
+                    <%}%>
+
+                      <%} else { %> No submission this season! <% } %>
+                  </div>
+                  <!--2018-->
+                  <div class="tab-pane fade show" id="s_2018" role="tabpanel" aria-labelledby="s_2018-tab">
+                    <br>
+                    <% if(user.submissions.s_2018.settlement_generator_submitted) { %>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>Generator Name:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2018.settlement_generator_name %></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>About:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2018.settlement_generator_about %></a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <a>Submitted Date:</a>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <a><%= user.submissions.s_2018.settlement_generator_submit_time %></a>
+                      </div>
+                    </div>
+                      <% } else { %> You don't have a submission for this season! <% } %>
+                  </div>
                 </div>
-                <br>
+                <!-- <br>
                 <div class="row">
                   <div class="col-md-12 mb-3">
                     <div class="alert alert-info" align="center">Coming soon, the results of your submission will be displayed here!</div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <br>
