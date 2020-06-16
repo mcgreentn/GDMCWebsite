@@ -79,6 +79,16 @@
           <form class="needs-validation" action="/submitgenerator" method="post" enctype="multipart/form-data" novalidate>
             <div class="form-row">
               <div class="col-md-6 mb-3">
+                <label for="validationCustom01">Team Name</label>
+                <input type="text" class="form-control" name="team_name" id="validationCustom03" placeholder="What is your team name?"
+                  value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
                 <label for="validationCustom01">Generator Name</label>
                 <input type="text" class="form-control" name="generator_name" id="validationCustom01" placeholder="Generator Name" value="" required>
                 <div class="valid-feedback">
@@ -102,7 +112,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" onclick="displayChronicleBox();" name="chronicleIncluded" id="chronicleIncluded">
                     <label class="form-check-label" for="chronicleIncluded">
-                      I am also participating in the new Chronicle Challenge!
+                      Optional: I am also participating in the new Chronicle Challenge!
                     </label>
                   </div>
                 </div>
@@ -115,14 +125,23 @@
                 <textarea class="form-control" name="chronicleAbout" id="chronicleInstructionsAbout" placeholder="Tell us where our judges should look for your chronicle" align="left" rows="10" style="width: 100%; z-index: auto; position: relative; display: none; line-height: 20px; font-size: 14px; transition: none; background: transparent !important;"></textarea>
               </div>
             </div>
-
             <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="publishOnline">
+                    <label class="form-check-label" for="publishOnline">
+                      Optional: I opt-in to my code being published online!
+                    </label>
+                  </div>
+                </div>
+              </div>
               <div class="col-md-6 mb-3">
                 <div class="form-group">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">
-                      I accept that all work submited therin is 100% my own or my team's.
+                      I accept that all work submitted therin is 100% my own or my team's.
                     </label>
                     <div class="invalid-feedback">
                       You must agree before submitting.

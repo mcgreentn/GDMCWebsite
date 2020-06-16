@@ -8,7 +8,7 @@ const util 		= require('util');
 
 module.exports = function(app, passport) {
 	var multer 		= require('multer');
-	var upload = multer({dest: './submissions/2019/settlement_generation/submissions/'});
+	var upload = multer({dest: './submissions/2020/settlement_generation/submissions/'});
 	var fs = require('fs');
 
 	app.use(bodyParser.json());
@@ -73,7 +73,7 @@ module.exports = function(app, passport) {
 		let isAuthed = req.isAuthenticated();
 		if(isAuthed)
 		{
-			res.render('profile.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
+			res.render('submit.ejs', { message: req.flash('homeMessage'), isAuthed : isAuthed, user : req.user });
 		}
 		else {
 			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
@@ -81,7 +81,7 @@ module.exports = function(app, passport) {
 	});
 
 	app.post('/submitgenerator', upload.single('uploadMe'), function(req,res){
-		let submissionAllowed = false;
+		let submissionAllowed = true;
 		console.log(req.file);
 		let isAuthed = req.isAuthenticated();
 		if(isAuthed && submissionAllowed) {
@@ -92,25 +92,35 @@ module.exports = function(app, passport) {
 
 			// update user info for submission
 			if(foundUser.submissions == undefined) {
+				console.log("No submissions found...generating submission field...");
 				foundUser.submissions = {};
-				foundUser.submissions.s_2019 = {};
-
+				foundUser.submissions.s_2020 = {};
 			}
-			foundUser.submissions.s_2019.settlement_generator_submitted = true;
-			foundUser.submissions.s_2019.settlement_generator_about = req.body.about;
-			foundUser.submissions.s_2019.settlement_generator_name = req.body.generator_name;
-			foundUser.submissions.s_2019.settlement_generator_submit_time = new Date();
+			if (foundUser.submissions.s_2020 == undefined) {
+				console.log("No 2020 submission found...generating 2020 field...");
+				foundUser.submissions.s_2020 = {};
+			}
+			foundUser.submissions.s_2020.settlement_generator_submitted = true;
+			foundUser.submissions.s_2020.settlement_generator_about = req.body.about;
+			foundUser.submissions.s_2020.settlement_generator_name = req.body.generator_name;
+			foundUser.submissions.s_2020.team_name = req.body.team_name;
+			foundUser.submissions.s_2020.settlement_generator_submit_time = new Date();
+			if(req.body.opt_in == undefined) {
+				foundUser.submissions.s_2020.opt_in = false;
+			} else {
+				foundUser.submissions.s_2020.opt_in = true;
+			}
 			if(req.body.chronicleIncluded == undefined) {
-				foundUser.submissions.s_2019.chronicle_included = false;
+				foundUser.submissions.s_2020.chronicle_included = false;
 			} else if(req.body.chronicleIncluded == 'on') {
-				foundUser.submissions.s_2019.chronicle_included = true;
-				foundUser.submissions.s_2019.chronicle_about = req.body.chronicleAbout;
+				foundUser.submissions.s_2020.chronicle_included = true;
+				foundUser.submissions.s_2020.chronicle_about = req.body.chronicleAbout;
 			}
 			console.log("chronicle: " + req.body.chronicleAbout);
 			// foundUser.submissions.s_2018.settlement_generator_hashname = req.file.name;
 			// change file name to user email
-			fs.rename('./submissions/2019/settlement_generation/submissions/' + req.file.filename,
-			 './submissions/2019/settlement_generation/submissions/' + foundUser.email + '.zip', function(err) {
+			fs.rename('./submissions/2020/settlement_generation/submissions/' + req.file.filename,
+			 `./submissions/2020/settlement_generation/submissions/${foundUser.email}_${req.body.team_name}.zip`, function(err) {
 			    if ( err ) console.log('ERROR: ' + err);
 			});
 			// save the user
@@ -130,9 +140,6 @@ module.exports = function(app, passport) {
 		else {
 			res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed : isAuthed });
 		}
-
-
-
 	});
 
 	app.get('/results', function (req, res) {
