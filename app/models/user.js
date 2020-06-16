@@ -30,6 +30,16 @@ var userSchema = mongoose.Schema({
             settlement_generator_submit_time    : Date,
             chronicle_included                  : String,
             chronicle_about                     : String
+        },
+        s_2020 :{
+            settlement_generator_submitted: Boolean,
+            settlement_generator_name: String,
+            settlement_generator_about: String,
+            settlement_generator_submit_time: Date,
+            chronicle_included: String,
+            chronicle_about: String,
+            team_name: String,
+            opt_in: Boolean
         }
     }
 

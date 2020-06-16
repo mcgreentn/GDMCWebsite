@@ -116,9 +116,8 @@ module.exports = function(app, passport) {
 				foundUser.submissions.s_2020.chronicle_included = true;
 				foundUser.submissions.s_2020.chronicle_about = req.body.chronicleAbout;
 			}
-			console.log("chronicle: " + req.body.chronicleAbout);
-			// foundUser.submissions.s_2018.settlement_generator_hashname = req.file.name;
-			// change file name to user email
+			console.log("new changes: " + foundUser.submissions.s_2020);
+			// change file name to user email + team_name
 			fs.rename('./submissions/2020/settlement_generation/submissions/' + req.file.filename,
 			 `./submissions/2020/settlement_generation/submissions/${foundUser.email}_${req.body.team_name}.zip`, function(err) {
 			    if ( err ) console.log('ERROR: ' + err);
