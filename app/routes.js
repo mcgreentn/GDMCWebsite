@@ -8,7 +8,10 @@ const util = require('util');
 
 module.exports = function (app, passport) {
     var multer = require('multer');
-    var upload = multer({ dest: './submissions/2020/settlement_generation/submissions/' });
+    var upload = multer({ 
+        dest: './submissions/2020/settlement_generation/submissions/', 
+        limits: { fileSize: 150*1000000 }}); 
+        // limits in megabytes (150MB)
     var fs = require('fs');
 
     app.use(bodyParser.json());
