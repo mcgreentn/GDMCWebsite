@@ -1111,7 +1111,7 @@
 
 .alert-minecraft-grass {
   /*background: "images/grass.jpg";*/
-  background: url('../images/grass1.png') repeat center center;
+  background: rgb(34, 143, 45);
   background-size: auto;
   color: white;
 }
