@@ -73,7 +73,8 @@ module.exports = function (app, passport) {
     app.get('/submit', function (req, res) {
         let isAuthed = req.isAuthenticated();
         if (isAuthed) {
-            res.render('submit.ejs', { message: req.flash('homeMessage'), isAuthed: isAuthed, user: req.user });
+            // res.render('submit.ejs', { message: req.flash('homeMessage'), isAuthed: isAuthed, user: req.user });
+            res.render('index.ejs', { message: req.flash('homeMessage'), isAuthed: isAuthed, user: req.user });
         }
         else {
             res.render('index.ejs', { message: req.flash('notlLoggedInMessage'), isAuthed: isAuthed });
